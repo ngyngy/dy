@@ -47,17 +47,17 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   resetFilters
 }) => {
   return (
-    <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 md:p-5 mb-6 text-slate-200 shadow-xl backdrop-blur-sm">
+    <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-3 sm:p-5 mb-6 text-slate-200 shadow-xl backdrop-blur-sm">
       {/* Category Pills Header */}
-      <div className="flex items-center justify-between gap-4 mb-4 border-b border-slate-800/80 pb-4 overflow-x-auto no-scrollbar">
-        <div className="flex items-center gap-2 min-w-max">
+      <div className="flex items-center justify-between gap-3 mb-3 sm:mb-4 border-b border-slate-800/80 pb-3 sm:pb-4 overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-1.5 sm:gap-2 min-w-max">
           {CATEGORIES.map((cat) => {
             const isActive = selectedCategory === cat.name;
             return (
               <button
                 key={cat.name}
                 onClick={() => setSelectedCategory(cat.name)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   isActive
                     ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20 border border-cyan-400/30'
                     : 'bg-slate-800/60 hover:bg-slate-800 text-slate-300 border border-slate-700/50'
@@ -71,8 +71,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         </div>
 
         {/* View Mode & Total Count */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
-          <span className="text-xs text-slate-400 font-mono bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="hidden sm:inline-block text-xs text-slate-400 font-mono bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">
             共 <strong className="text-cyan-400 font-bold">{totalCount}</strong> 项资源
           </span>
           <div className="bg-slate-950 p-1 rounded-xl border border-slate-800 flex items-center gap-1">
@@ -81,9 +81,9 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               className={`p-1.5 rounded-lg text-xs transition-colors cursor-pointer ${
                 viewMode === 'grid' ? 'bg-slate-800 text-cyan-400 font-bold' : 'text-slate-400 hover:text-slate-200'
               }`}
-              title="大图网格试图"
+              title="大图网格视图"
             >
-              <Grid className="w-4 h-4" />
+              <Grid className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
             <button
               onClick={() => setViewMode('list')}
@@ -92,7 +92,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
               title="紧凑列表视图"
             >
-              <List className="w-4 h-4" />
+              <List className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
           </div>
         </div>

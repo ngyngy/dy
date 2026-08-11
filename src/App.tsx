@@ -172,7 +172,7 @@ export default function App() {
       />
 
       {/* Main Container */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3.5 sm:py-6">
         {/* Banner Hero Spotlight (Shown when no search query and in All/Main category) */}
         {!searchQuery && (selectedCategory === '全部' || selectedCategory === '电影') && (
           <BannerHero
@@ -253,7 +253,7 @@ export default function App() {
           <div
             className={
               viewMode === 'grid'
-                ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6'
+                ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-6'
                 : 'space-y-3'
             }
           >

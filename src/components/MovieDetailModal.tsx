@@ -63,54 +63,54 @@ export const MovieDetailModal: React.FC<MovieDetailModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        <div className="overflow-y-auto p-6 space-y-6">
+        <div className="overflow-y-auto p-3.5 sm:p-6 space-y-4 sm:space-y-6">
           {/* Top Banner & Info Grid */}
-          <div className="flex flex-col sm:flex-row gap-6 items-start">
+          <div className="flex flex-row sm:flex-row gap-3 sm:gap-6 items-start">
             {/* Poster Card */}
-            <div className="relative w-36 sm:w-48 aspect-[2/3] shrink-0 rounded-2xl overflow-hidden border-2 border-cyan-500/30 shadow-2xl mx-auto sm:mx-0">
+            <div className="relative w-28 sm:w-48 aspect-[2/3] shrink-0 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-cyan-500/30 shadow-2xl">
               <img
                 src={movie.posterUrl}
                 alt={movie.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-2 left-2 bg-gradient-to-r from-amber-500 to-red-600 text-slate-950 font-black text-[10px] px-2 py-0.5 rounded shadow">
+              <div className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 bg-gradient-to-r from-amber-500 to-red-600 text-slate-950 font-black text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded shadow">
                 {movie.quality}
               </div>
               {movie.size && (
-                <div className="absolute bottom-2 right-2 bg-slate-950/90 text-cyan-400 font-mono text-xs font-bold px-2 py-0.5 rounded border border-cyan-500/30 flex items-center gap-1">
-                  <HardDrive className="w-3 h-3 text-cyan-400" />
+                <div className="absolute bottom-1.5 right-1.5 sm:bottom-2 sm:right-2 bg-slate-950/90 text-cyan-400 font-mono text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 rounded border border-cyan-500/30 flex items-center gap-1">
+                  <HardDrive className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400" />
                   {movie.size}
                 </div>
               )}
             </div>
 
             {/* Movie Info Details */}
-            <div className="flex-1 min-w-0 space-y-3">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono text-xs px-2.5 py-0.5 rounded-full font-bold">
+            <div className="flex-1 min-w-0 space-y-2 sm:space-y-3">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span className="bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-bold">
                   {movie.category}
                 </span>
-                <span className="bg-slate-800 text-slate-300 text-xs px-2.5 py-0.5 rounded-full">
+                <span className="bg-slate-800 text-slate-300 text-[10px] sm:text-xs px-2 py-0.5 rounded-full">
                   {movie.year}
                 </span>
-                <span className="bg-amber-500/20 text-amber-300 text-xs px-2.5 py-0.5 rounded-full font-bold flex items-center gap-1">
-                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                  {movie.rating} 评分
+                <span className="bg-amber-500/20 text-amber-300 text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                  <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                  {movie.rating}
                 </span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              <h2 className="text-base sm:text-2xl font-extrabold text-white tracking-tight leading-snug">
                 {movie.title}
               </h2>
 
               {movie.subtitle && (
-                <p className="text-xs sm:text-sm text-slate-400 font-mono">
+                <p className="text-[11px] sm:text-sm text-slate-400 font-mono">
                   {movie.subtitle}
                 </p>
               )}
 
               {/* Episode & Audio / Subtitle specifications */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs bg-slate-950/80 p-3 rounded-xl border border-slate-800 text-slate-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px] sm:text-xs bg-slate-950/80 p-2.5 sm:p-3 rounded-xl border border-slate-800 text-slate-300">
                 {movie.episodes && (
                   <div>
                     <span className="text-slate-500">集数说明：</span>
@@ -140,11 +140,11 @@ export const MovieDetailModal: React.FC<MovieDetailModalProps> = ({
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
+              <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-1">
                 {movie.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="bg-slate-950 text-slate-400 text-xs px-2.5 py-0.5 rounded-lg border border-slate-800"
+                    className="bg-slate-950 text-slate-400 text-[10px] sm:text-xs px-2 py-0.5 rounded-lg border border-slate-800"
                   >
                     #{tag}
                   </span>

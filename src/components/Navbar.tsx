@@ -30,44 +30,45 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-slate-100 shadow-xl">
       {/* Top Notice / Domain Announcement Bar */}
-      <div className="bg-gradient-to-r from-cyan-950 via-slate-900 to-indigo-950 text-xs py-1.5 px-4 text-center border-b border-cyan-500/20 text-slate-300 flex items-center justify-between">
+      <div className="bg-gradient-to-r from-cyan-950 via-slate-900 to-indigo-950 text-[11px] sm:text-xs py-1.5 px-3 sm:px-4 border-b border-cyan-500/20 text-slate-300 flex items-center justify-between">
         <div className="hidden sm:flex items-center gap-2 text-cyan-400 font-mono">
           <HardDrive className="w-3.5 h-3.5" />
           <span>官方专属域名：dy.ngy123.com</span>
         </div>
-        <div className="mx-auto sm:mx-0 flex items-center gap-3">
-          <span className="flex items-center gap-1.5 text-amber-300 font-medium">
-            <span className="relative flex h-2 w-2">
+        <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-2">
+          <span className="flex items-center gap-1.5 text-amber-300 font-medium truncate">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
             </span>
-            已整合 22+ 夸克4K/REMUX顶级原盘合集，支持一键掏淘口令！
+            <span className="truncate">夸克 4K/REMUX 原盘合集，一键复制淘口令！</span>
           </span>
           <button
             onClick={openHelpModal}
-            className="text-cyan-400 hover:text-cyan-300 underline font-medium flex items-center gap-1 cursor-pointer"
+            className="text-cyan-400 hover:text-cyan-300 underline font-medium flex items-center gap-1 cursor-pointer shrink-0 ml-1"
           >
             <HelpCircle className="w-3 h-3" />
-            夸克保存教程
+            <span className="hidden xs:inline">保存教程</span>
+            <span className="xs:hidden">教程</span>
           </button>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div className="flex items-center justify-between gap-3 md:gap-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3">
+        <div className="flex items-center justify-between gap-2 sm:gap-4 md:gap-6">
           {/* Logo & Site Title */}
           <div 
             onClick={() => { setSelectedCategory('全部'); setSearchQuery(''); }}
-            className="flex items-center gap-3 cursor-pointer group shrink-0"
+            className="flex items-center gap-2 sm:gap-3 cursor-pointer group shrink-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-200">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-200">
               <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                <Film className="w-5 h-5 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
+                <Film className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-cyan-300 tracking-tight">
+                <h1 className="text-base sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-cyan-300 tracking-tight">
                   电影资源站
                 </h1>
                 <span className="hidden md:inline-block px-2 py-0.5 text-[10px] font-mono bg-cyan-950/80 text-cyan-400 border border-cyan-800/60 rounded-md">
@@ -83,18 +84,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Search Input Bar */}
           <div className="flex-1 max-w-xl relative">
             <div className="relative">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Search className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="搜索电影、美剧、动漫、画质 (如 4K, REMUX, 830G, 老友记)..."
-                className="w-full bg-slate-950/80 border border-slate-700/80 focus:border-cyan-500/80 rounded-xl pl-10 pr-10 py-2 text-sm text-slate-100 placeholder-slate-400 outline-none transition-all shadow-inner focus:ring-2 focus:ring-cyan-500/20"
+                placeholder="搜索电影、剧集、动漫、画质..."
+                className="w-full bg-slate-950/80 border border-slate-700/80 focus:border-cyan-500/80 rounded-xl pl-8 sm:pl-10 pr-8 sm:pr-10 py-1.5 sm:py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-400 outline-none transition-all shadow-inner focus:ring-2 focus:ring-cyan-500/20"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs bg-slate-800 hover:bg-slate-700 rounded-full w-5 h-5 flex items-center justify-center cursor-pointer"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs bg-slate-800 hover:bg-slate-700 rounded-full w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center cursor-pointer"
                 >
                   ✕
                 </button>
