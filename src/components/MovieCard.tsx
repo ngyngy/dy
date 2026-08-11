@@ -268,7 +268,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
         <div className="pt-1.5 sm:pt-2 border-t border-slate-800/80 flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={handleCopyQuark}
-            className={`flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer ${
+            className={`flex-1 flex items-center justify-center gap-1 py-1.5 sm:py-2 px-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer ${
               copied
                 ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30'
                 : 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/20'
@@ -276,13 +276,13 @@ export const MovieCard: React.FC<MovieCardProps> = ({
           >
             {copied ? (
               <>
-                <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                <Check className="w-3.5 h-3.5" />
                 <span>已复制</span>
               </>
             ) : (
               <>
-                <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                <span className="hidden sm:inline">一键复制淘口令</span>
+                <Copy className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">一键复制夸克口令</span>
                 <span className="sm:hidden">复制口令</span>
               </>
             )}
@@ -293,10 +293,11 @@ export const MovieCard: React.FC<MovieCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="p-1.5 sm:p-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg sm:rounded-xl border border-slate-700 transition-colors cursor-pointer shrink-0"
+            className="flex-1 flex items-center justify-center gap-1 py-1.5 sm:py-2 px-2 rounded-lg sm:rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white border border-slate-700 font-bold text-[11px] sm:text-xs transition-colors cursor-pointer"
             title="直接打开夸克网盘链接"
           >
-            <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400" />
+            <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
+            <span>夸克直达</span>
           </a>
         </div>
       </div>

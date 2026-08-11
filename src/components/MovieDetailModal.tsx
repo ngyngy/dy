@@ -173,10 +173,10 @@ export const MovieDetailModal: React.FC<MovieDetailModalProps> = ({
             </div>
 
             {/* Quick Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 sm:gap-3 pt-1">
               <button
                 onClick={handleCopyShareText}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm transition-all cursor-pointer ${
+                className={`col-span-1 sm:flex-1 flex items-center justify-center gap-1.5 py-2.5 sm:py-3 px-3 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
                   copiedText
                     ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30'
                     : 'bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white shadow-xl shadow-cyan-500/25'
@@ -185,37 +185,37 @@ export const MovieDetailModal: React.FC<MovieDetailModalProps> = ({
                 {copiedText ? (
                   <>
                     <Check className="w-4 h-4" />
-                    已复制全套口令
+                    <span>已复制口令</span>
                   </>
                 ) : (
                   <>
                     <Copy className="w-4 h-4" />
-                    一键复制夸克口令
+                    <span>一键复制夸克口令</span>
                   </>
                 )}
-              </button>
-
-              <button
-                onClick={handleCopyLinkOnly}
-                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium text-xs transition-colors cursor-pointer"
-              >
-                {copiedUrl ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-slate-400" />}
-                复制纯链接
               </button>
 
               <a
                 href={movie.quarkLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-slate-700 font-medium text-xs transition-colors cursor-pointer"
+                className="col-span-1 sm:flex-1 flex items-center justify-center gap-1.5 py-2.5 sm:py-3 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white border border-slate-700 font-bold text-xs sm:text-sm transition-colors cursor-pointer"
               >
-                <ExternalLink className="w-4 h-4" />
-                网页打开
+                <ExternalLink className="w-4 h-4 text-cyan-400" />
+                <span>夸克直达</span>
               </a>
 
               <button
+                onClick={handleCopyLinkOnly}
+                className="col-span-1 flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium text-xs transition-colors cursor-pointer"
+              >
+                {copiedUrl ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
+                <span>复制纯链接</span>
+              </button>
+
+              <button
                 onClick={() => onToggleFavorite(movie.id)}
-                className={`p-3 rounded-xl border transition-colors cursor-pointer ${
+                className={`col-span-1 sm:col-auto p-2.5 sm:p-3 rounded-xl border flex items-center justify-center gap-1 text-xs font-medium transition-colors cursor-pointer ${
                   isFavorite
                     ? 'bg-rose-600 text-white border-rose-400'
                     : 'bg-slate-800 text-slate-300 hover:text-white border-slate-700'
@@ -223,6 +223,7 @@ export const MovieDetailModal: React.FC<MovieDetailModalProps> = ({
                 title="收藏"
               >
                 <Heart className={`w-4 h-4 ${isFavorite ? 'fill-white' : ''}`} />
+                <span className="sm:hidden">{isFavorite ? '已收藏' : '收藏'}</span>
               </button>
             </div>
           </div>

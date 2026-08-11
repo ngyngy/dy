@@ -128,21 +128,20 @@ export const BannerHero: React.FC<BannerHeroProps> = ({
           </div>
 
           {/* Direct Action Buttons */}
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center gap-2">
             <button
               onClick={(e) => handleCopy(e, movie)}
-              className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-cyan-500/25 transition-all cursor-pointer"
+              className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-cyan-500/25 transition-all cursor-pointer"
             >
               {copiedId === movie.id ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-300" />
-                  已复制淘口令
+                  <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-300" />
+                  <span>已复制口令</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">一键复制夸克淘口令</span>
-                  <span className="sm:hidden">复制夸克口令</span>
+                  <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span>一键复制夸克口令</span>
                 </>
               )}
             </button>
@@ -152,10 +151,10 @@ export const BannerHero: React.FC<BannerHeroProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-1 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 font-medium text-xs sm:text-sm transition-all cursor-pointer"
+              className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white border border-slate-700 font-bold text-xs sm:text-sm transition-all cursor-pointer"
             >
-              <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
-              夸克直达
+              <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400" />
+              <span>夸克直达</span>
             </a>
 
             <button
