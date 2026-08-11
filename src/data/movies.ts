@@ -468,5 +468,25 @@ export const INITIAL_RESOURCES: MovieResource[] = [
     featured: true,
     hotScore: 14200,
     addedAt: '2026-07-23'
+  },
+  {
+    id: 'stephen-chow-collection',
+    title: '周星驰经典电影作品全集',
+    subtitle: 'Stephen Chow Complete Movie Collection',
+    category: '电影',
+    quality: '4K/高清国粤双语',
+    year: '1988-2019',
+    rating: 9.8,
+    tags: ['周星驰', '无厘头喜剧', '喜剧之王', '高清国粤双语', '镇盘神作'],
+    posterUrl: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&auto=format&fit=crop&q=80',
+    bannerBg: 'from-amber-950 via-yellow-950 to-black',
+    quarkLink: 'https://pan.quark.cn/s/4b94a02565ae',
+    quarkShareText: `我用夸克网盘给你分享了「周星驰」，点击链接或复制整段内容，打开「夸克APP」即可获取。\n/~7a753a8Tab~:/\n链接：https://pan.quark.cn/s/4b94a02565ae`,
+    description: '周星驰（星爷）经典喜剧电影超全合集！涵盖《大话西游》《喜剧之王》《功夫》《少林足球》《唐伯虎点秋香》《鹿鼎记》《国产凌凌漆》《九品芝麻官》《逃学威龙》《食神》等多部无厘头巅峰巨作，高清国粤双语，影迷必收镇盘宝藏。',
+    episodes: '星爷经典电影全套典藏',
+    audioSubtitle: '国粤双语 / 精修中文字幕',
+    featured: true,
+    hotScore: 16800,
+    addedAt: '2026-08-11'
   }
 ];
