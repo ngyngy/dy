@@ -1,0 +1,6 @@
+{
+  "name": "电影资源站 (dy.ngy123.com)",
+  "description": "基于夸克网盘的高清电影、美剧、动漫与蓝光原盘资源免费分享平台，支持一键复制淘口令与智能求片搜索",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
