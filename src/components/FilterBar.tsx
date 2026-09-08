@@ -1,6 +1,6 @@
 import React from 'react';
 import { CategoryFilter, QualityFilter, SortOption, ViewMode } from '../types';
-import { Filter, Grid, List, ArrowUpDown, Film, Tv, Sparkles, Smile, Heart, HardDrive, Check } from 'lucide-react';
+import { Filter, Grid, List, ArrowUpDown, Film, Tv, Sparkles, Smile, Heart, HardDrive, Check, Flame } from 'lucide-react';
 
 interface FilterBarProps {
   selectedCategory: CategoryFilter;
@@ -17,6 +17,7 @@ interface FilterBarProps {
 
 const CATEGORIES: { name: CategoryFilter; icon: React.ReactNode; color: string }[] = [
   { name: '全部', icon: <Film className="w-4 h-4" />, color: 'cyan' },
+  { name: '热门短剧', icon: <Flame className="w-4 h-4" />, color: 'rose' },
   { name: '欧美剧集', icon: <Tv className="w-4 h-4" />, color: 'indigo' },
   { name: '热门动漫', icon: <Sparkles className="w-4 h-4" />, color: 'amber' },
   { name: '经典高分', icon: <Film className="w-4 h-4" />, color: 'rose' },

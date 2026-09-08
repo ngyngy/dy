@@ -1,24 +1,5 @@
-export interface MovieResource {
-  id: string;
-  title: string;
-  subtitle?: string;
-  category: '电影' | '欧美剧集' | '热门动漫' | '经典高分' | '儿童少儿';
-  quality: string;
-  size?: string;
-  year: string;
-  rating: number;
-  tags: string[];
-  posterUrl: string;
-  bannerBg: string;
-  quarkLink: string;
-  quarkShareText: string;
-  description: string;
-  episodes?: string;
-  audioSubtitle?: string;
-  featured?: boolean;
-  hotScore: number;
-  addedAt: string;
-}
+import { MovieResource } from '../types';
+export type { MovieResource };
 
 export const INITIAL_RESOURCES: MovieResource[] = [
   {
@@ -669,5 +650,65 @@ export const INITIAL_RESOURCES: MovieResource[] = [
     featured: true,
     hotScore: 16200,
     addedAt: '2026-09-05'
+  },
+  {
+    id: 'bei-cai-diao-de-nv-hai',
+    title: '被裁掉的女孩 (全集完结)',
+    subtitle: 'The Laid-off Girl / 2024最火职场反击爽剧',
+    category: '热门短剧',
+    quality: '4K/1080P 高清全集',
+    year: '2024',
+    rating: 9.3,
+    tags: ['被裁掉的女孩', '热门短剧', '职场逆袭', '反转爽剧', '断层爆款'],
+    posterUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80',
+    bannerBg: 'from-rose-950 via-slate-900 to-black',
+    quarkLink: 'https://pan.quark.cn/s/fede8d7a69c2',
+    quarkShareText: `我用夸克网盘给你分享了「被裁掉的女孩」，点击链接或复制整段内容，打开「夸克APP」即可获取。\n/~a7d23ajWaD~:/\n链接：https://pan.quark.cn/s/fede8d7a69c2`,
+    description: '全网热搜霸榜TOP1爆火短剧！讲述普通打工女孩在公司突遭卸磨杀驴被恶意裁员后，凭借超高智商与缜密布局一路逆风反杀、彻底瓦解恶毒高层与资本黑幕的极速燃爽反击神作。',
+    episodes: '全集大结局完整版',
+    audioSubtitle: '国语原声 / 官方高清字幕',
+    featured: true,
+    hotScore: 21500,
+    addedAt: '2026-09-07'
+  },
+  {
+    id: 'wan-yao-tu-lu-zhuan',
+    title: '万妖图录传 (全集完结)',
+    subtitle: 'Record of Ten Thousand Demons / 爆火玄幻修真捉妖短剧',
+    category: '热门短剧',
+    quality: '4K/1080P 高清全集',
+    year: '2024',
+    rating: 9.2,
+    tags: ['万妖图录传', '玄幻修真', '热门短剧', '捉妖降魔', '高燃打戏'],
+    posterUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80',
+    bannerBg: 'from-purple-950 via-slate-900 to-black',
+    quarkLink: 'https://pan.quark.cn/s/770024538e0d',
+    quarkShareText: `我用夸克网盘给你分享了「万妖图录传」，点击链接或复制整段内容，打开「夸克APP」即可获取。\n/~97123ajWaV~:/\n链接：https://pan.quark.cn/s/770024538e0d`,
+    description: '播放量破亿现象级玄幻降妖力作！主角机缘巧合下执掌上古禁器「万妖图录」，御万妖之魂、镇诸天凶煞，一路踏平妖域强敌，打戏干脆利落，特效与节奏拉满。',
+    episodes: '全集大结局完整版 (无删减)',
+    audioSubtitle: '国语原声 / 官方高清字幕',
+    featured: true,
+    hotScore: 20200,
+    addedAt: '2026-09-07'
+  },
+  {
+    id: 'fa-pei-bian-guan-zui-qi',
+    title: '发配边关，罪妻开荒养出战神 (全集完结)',
+    subtitle: 'Exiled to the Border / 穿越种田开荒称霸爽剧',
+    category: '热门短剧',
+    quality: '4K/1080P 高清全集',
+    year: '2024',
+    rating: 9.5,
+    tags: ['发配边关', '罪妻开荒', '古装穿越', '种田基建', '战神逆袭', '爆火短剧'],
+    posterUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80',
+    bannerBg: 'from-amber-950 via-stone-900 to-black',
+    quarkLink: 'https://pan.quark.cn/s/ef1e607b2c2c',
+    quarkShareText: `我用夸克网盘给你分享了「发配边关，罪妻开荒养出战神」，点击链接或复制整段内容，打开「夸克APP」即可获取。\n/~50f33ajXeO~:/\n链接：https://pan.quark.cn/s/ef1e607b2c2c`,
+    description: '当前热度登顶的古装穿越种田大女主爽剧！开局被抄家贬为罪妻发配苦寒蛮荒边关，主角携现代基建与军医知识白手起家，开荒拓土、筑城屯粮，手把手将落魄夫君培养成横扫六合的一代不败战神！',
+    episodes: '全集大结局完结珍藏',
+    audioSubtitle: '国语原声 / 官方高清字幕',
+    featured: true,
+    hotScore: 22800,
+    addedAt: '2026-09-07'
   }
 ];

@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
             </span>
-            <span className="truncate">夸克 4K/REMUX 原盘合集，一键复制淘口令！</span>
+            <span className="truncate">夸克 4K/REMUX 原盘/热门短剧合集，一键复制夸克口令！</span>
           </span>
           <button
             onClick={openHelpModal}
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
               <p className="text-[11px] text-slate-400 hidden sm:block">
-                高清夸克网盘影视资源免费分享平台
+                高清夸克网盘影视/短剧免费分享平台
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="搜索电影、剧集、动漫、画质..."
+                placeholder="搜索电影、美剧、热门短剧、动漫..."
                 className="w-full bg-slate-950/80 border border-slate-700/80 focus:border-cyan-500/80 rounded-xl pl-8 sm:pl-10 pr-8 sm:pr-10 py-1.5 sm:py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-400 outline-none transition-all shadow-inner focus:ring-2 focus:ring-cyan-500/20"
               />
               {searchQuery && (

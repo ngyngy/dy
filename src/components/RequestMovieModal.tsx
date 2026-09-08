@@ -147,6 +147,7 @@ export const RequestMovieModal: React.FC<RequestMovieModalProps> = ({
                     onChange={(e) => setCategory(e.target.value as any)}
                     className="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-3 py-2 text-slate-100 outline-none focus:border-emerald-500"
                   >
+                    <option value="热门短剧">热门短剧</option>
                     <option value="电影">电影</option>
                     <option value="欧美剧集">欧美剧集</option>
                     <option value="热门动漫">热门动漫</option>
