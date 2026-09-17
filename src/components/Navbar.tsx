@@ -31,9 +31,22 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-slate-100 shadow-xl">
       {/* Top Notice / Domain Announcement Bar */}
       <div className="bg-gradient-to-r from-cyan-950 via-slate-900 to-indigo-950 text-[11px] sm:text-xs py-1.5 px-3 sm:px-4 border-b border-cyan-500/20 text-slate-300 flex items-center justify-between">
-        <div className="hidden sm:flex items-center gap-2 text-cyan-400 font-mono">
-          <HardDrive className="w-3.5 h-3.5" />
-          <span>官方专属域名：dy.ngy123.com</span>
+        <div className="hidden sm:flex items-center gap-2.5 text-cyan-400 font-mono">
+          <div className="flex items-center gap-1.5">
+            <HardDrive className="w-3.5 h-3.5" />
+            <span>影视分站：dy.ngy123.com</span>
+          </div>
+          <span className="text-slate-600">|</span>
+          <a
+            href="https://www.wangpan8.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-amber-300 hover:text-amber-200 flex items-center gap-1 font-sans font-bold transition-colors"
+            title="访问官方主站：网盘吧"
+          >
+            <span>👑 官方主站：www.wangpan8.com</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
         </div>
         <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-2">
           <span className="flex items-center gap-1.5 text-amber-300 font-medium truncate">
@@ -74,9 +87,20 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="hidden md:inline-block px-2 py-0.5 text-[10px] font-mono bg-cyan-950/80 text-cyan-400 border border-cyan-800/60 rounded-md">
                   dy.ngy123.com
                 </span>
+                <a
+                  href="https://www.wangpan8.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold bg-amber-950/70 hover:bg-amber-900/80 text-amber-300 border border-amber-500/50 rounded-md transition-colors shadow-sm"
+                  title="访问官方主站：网盘吧 (wangpan8.com)"
+                >
+                  <span>官方主站</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
               </div>
               <p className="text-[11px] text-slate-400 hidden sm:block">
-                高清夸克网盘影视/短剧免费分享平台
+                高清夸克网盘影视/短剧免费分享平台 (主站: www.wangpan8.com)
               </p>
             </div>
           </div>

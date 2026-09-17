@@ -8,6 +8,16 @@ interface FooterProps {
 
 const FRIENDLY_LINKS = [
   {
+    domain: 'www.wangpan8.com',
+    url: 'https://www.wangpan8.com/',
+    title: '网盘吧 (官方主站)',
+    desc: '网盘吧官方主站 · 海量夸克与全网优质网盘资源导航总站',
+    rankBadge: '官方主站',
+    badgeColor: 'bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-300 border-amber-400/50',
+    icon: '👑',
+    isMain: true
+  },
+  {
     domain: 'btc.ngy123.com',
     url: 'https://btc.ngy123.com',
     title: '比特币导航站',
@@ -118,14 +128,25 @@ export const Footer: React.FC<FooterProps> = ({ totalCount, totalSizeGB }) => {
               </div>
             </div>
             <div>
-              <div className="text-lg font-bold text-white flex items-center gap-2">
+              <div className="text-lg font-bold text-white flex flex-wrap items-center gap-2">
                 电影资源站
                 <span className="text-xs font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">
                   dy.ngy123.com
                 </span>
+                <a
+                  href="https://www.wangpan8.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-amber-300 bg-amber-950/80 hover:bg-amber-900/80 px-2 py-0.5 rounded-lg border border-amber-500/50 flex items-center gap-1 transition-colors shadow-sm"
+                  title="访问官方主站：网盘吧"
+                >
+                  <Award className="w-3 h-3 text-amber-400" />
+                  <span>官方主站：www.wangpan8.com</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
               </div>
-              <p className="text-xs text-slate-400">
-                专为影迷打造的高清夸克网盘电影、剧集、动漫与蓝光原盘免费分享平台
+              <p className="text-xs text-slate-400 mt-1">
+                专为影迷打造的高清夸克网盘电影、剧集、短剧与蓝光原盘免费分享平台（主站：网盘吧）
               </p>
             </div>
           </div>
@@ -163,17 +184,37 @@ export const Footer: React.FC<FooterProps> = ({ totalCount, totalSizeGB }) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3.5 bg-slate-900/70 hover:bg-slate-900 border border-slate-800/80 hover:border-cyan-500/50 rounded-2xl transition-all duration-200 flex items-start gap-3 shadow-sm hover:shadow-md hover:shadow-cyan-500/5 cursor-pointer"
+                className={`group p-3.5 rounded-2xl transition-all duration-200 flex items-start gap-3 shadow-sm cursor-pointer ${
+                  (link as any).isMain
+                    ? 'bg-gradient-to-r from-amber-950/30 via-slate-900 to-slate-900 hover:from-amber-950/50 hover:to-slate-900 border border-amber-500/50 hover:border-amber-400 ring-1 ring-amber-500/20 shadow-amber-500/5'
+                    : 'bg-slate-900/70 hover:bg-slate-900 border border-slate-800/80 hover:border-cyan-500/50 hover:shadow-cyan-500/5'
+                }`}
               >
-                <div className="w-9 h-9 rounded-xl bg-slate-950 border border-slate-800 group-hover:border-cyan-500/40 flex items-center justify-center text-base shrink-0 transition-colors">
+                <div
+                  className={`w-9 h-9 rounded-xl border flex items-center justify-center text-base shrink-0 transition-colors ${
+                    (link as any).isMain
+                      ? 'bg-amber-950/60 border-amber-500/40 group-hover:border-amber-400 text-amber-300'
+                      : 'bg-slate-950 border-slate-800 group-hover:border-cyan-500/40'
+                  }`}
+                >
                   {link.icon}
                 </div>
 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-1">
-                    <h4 className="text-xs font-bold text-slate-100 group-hover:text-cyan-300 transition-colors truncate flex items-center gap-1">
+                    <h4
+                      className={`text-xs font-bold transition-colors truncate flex items-center gap-1 ${
+                        (link as any).isMain
+                          ? 'text-amber-200 group-hover:text-amber-100'
+                          : 'text-slate-100 group-hover:text-cyan-300'
+                      }`}
+                    >
                       {link.title}
-                      <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                      <ExternalLink
+                        className={`w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ${
+                          (link as any).isMain ? 'text-amber-400' : 'text-cyan-400'
+                        }`}
+                      />
                     </h4>
                     {link.rankBadge && (
                       <span className={`text-[10px] px-1.5 py-0.2 rounded border font-mono font-bold shrink-0 ${link.badgeColor}`}>
@@ -184,7 +225,13 @@ export const Footer: React.FC<FooterProps> = ({ totalCount, totalSizeGB }) => {
                   <p className="text-[11px] text-slate-400 mt-1 leading-snug line-clamp-1">
                     {link.desc}
                   </p>
-                  <span className="text-[10px] font-mono text-cyan-500/80 group-hover:text-cyan-400 mt-1 block">
+                  <span
+                    className={`text-[10px] font-mono mt-1 block ${
+                      (link as any).isMain
+                        ? 'text-amber-400/90 group-hover:text-amber-300 font-semibold'
+                        : 'text-cyan-500/80 group-hover:text-cyan-400'
+                    }`}
+                  >
                     {link.domain}
                   </span>
                 </div>
@@ -196,7 +243,16 @@ export const Footer: React.FC<FooterProps> = ({ totalCount, totalSizeGB }) => {
         {/* Disclaimer & Copyright */}
         <div className="pt-6 border-t border-slate-800/80 text-xs text-slate-500 leading-relaxed text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="max-w-3xl">
-            本站域名为 <strong>dy.ngy123.com</strong> (电影资源站)。本站所有影视资源均采集自互联网个人或夸克网盘用户共享链接，仅供学习交流与个人收藏使用。网站本身不直接存储任何影视视频文件。版权归原电影公司或制片方所有。
+            本站域名为 <strong>dy.ngy123.com</strong> (电影资源分站)，官方主站为{' '}
+            <a
+              href="https://www.wangpan8.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-400 hover:text-amber-300 underline font-semibold transition-colors"
+            >
+              www.wangpan8.com (网盘吧)
+            </a>
+            。本站所有影视资源均采集自互联网个人或夸克网盘用户共享链接，仅供学习交流与个人收藏使用。网站本身不直接存储任何影视视频文件。版权归原电影公司或制片方所有。
           </p>
           <p className="shrink-0 font-mono">
             © {new Date().getFullYear()} dy.ngy123.com All Rights Reserved.
