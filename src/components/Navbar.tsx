@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Film, Sparkles, Heart, PlusCircle, CopyCheck, ExternalLink, HelpCircle, HardDrive } from 'lucide-react';
+import { Search, Film, Sparkles, Heart, PlusCircle, CopyCheck, ExternalLink, HelpCircle, HardDrive, Twitter } from 'lucide-react';
 import { CategoryFilter } from '../types';
 
 interface NavbarProps {
@@ -64,6 +64,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="hidden xs:inline">保存教程</span>
             <span className="xs:hidden">教程</span>
           </button>
+          <span className="text-slate-600 hidden sm:inline">|</span>
+          <a
+            href="https://x.com/nangongyuan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 hover:text-sky-400 font-medium flex items-center gap-1 transition-colors shrink-0 ml-1"
+            title="关注推特 @nangongyuan"
+          >
+            <Twitter className="w-3 h-3 text-sky-400" />
+            <span className="hidden md:inline">推特 @nangongyuan</span>
+            <span className="md:hidden">推特</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+          </a>
         </div>
       </div>
 
@@ -183,6 +196,19 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               )}
             </button>
+
+            {/* Twitter / X External Link */}
+            <a
+              href="https://x.com/nangongyuan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 hover:border-sky-500/50 text-xs sm:text-sm font-medium transition-all shadow-sm group cursor-pointer shrink-0"
+              title="访问推特 @nangongyuan"
+            >
+              <Twitter className="w-4 h-4 text-sky-400 group-hover:scale-110 transition-transform shrink-0" />
+              <span className="hidden sm:inline">推特</span>
+              <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-slate-200 shrink-0 hidden sm:inline" />
+            </a>
           </div>
         </div>
       </div>

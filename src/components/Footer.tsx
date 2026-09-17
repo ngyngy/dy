@@ -1,5 +1,5 @@
 import React from 'react';
-import { Film, HardDrive, ShieldCheck, Heart, Sparkles, ExternalLink, Globe, Link2, Award } from 'lucide-react';
+import { Film, HardDrive, ShieldCheck, Heart, Sparkles, ExternalLink, Globe, Link2, Award, Twitter } from 'lucide-react';
 
 interface FooterProps {
   totalCount: number;
@@ -254,9 +254,22 @@ export const Footer: React.FC<FooterProps> = ({ totalCount, totalSizeGB }) => {
             </a>
             。本站所有影视资源均采集自互联网个人或夸克网盘用户共享链接，仅供学习交流与个人收藏使用。网站本身不直接存储任何影视视频文件。版权归原电影公司或制片方所有。
           </p>
-          <p className="shrink-0 font-mono">
-            © {new Date().getFullYear()} dy.ngy123.com All Rights Reserved.
-          </p>
+          <div className="shrink-0 flex items-center gap-4">
+            <a
+              href="https://x.com/nangongyuan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-slate-400 hover:text-sky-400 font-medium transition-colors"
+              title="推特 / X: @nangongyuan"
+            >
+              <Twitter className="w-3.5 h-3.5 text-sky-400" />
+              <span>推特 @nangongyuan</span>
+            </a>
+            <span className="font-mono text-slate-600">|</span>
+            <p className="font-mono">
+              © {new Date().getFullYear()} dy.ngy123.com All Rights Reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
