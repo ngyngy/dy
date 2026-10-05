@@ -1891,5 +1891,25 @@ export const INITIAL_RESOURCES: MovieResource[] = [
     featured: true,
     hotScore: 25400,
     addedAt: '2026-10-01'
+  },
+  {
+    id: 'yi-dao-qing-cheng-1993-4k',
+    title: '一刀倾城 (1993) 4K修复版',
+    subtitle: 'Blade of Fury (1993) 4K / 洪金宝执导晚清热血武侠史诗神作',
+    category: '电影',
+    quality: '4K 超清修复',
+    year: '1993',
+    rating: 9.3,
+    tags: ['一刀倾城', 'Blade of Fury', '4K修复', '经典武侠', '洪金宝', '狄龙', '大刀王五', '谭嗣同', '经典高分', '动作电影'],
+    posterUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&auto=format&fit=crop&q=80',
+    bannerBg: 'from-amber-950 via-red-950 to-black',
+    quarkLink: 'https://pan.quark.cn/s/688d65893dce',
+    quarkShareText: `我用夸克网盘给你分享了「一刀倾城 (1993) 4K」，点击链接或复制整段内容，打开「夸克APP」即可获取。\n/c95f3bGw9p:/\n链接：https://pan.quark.cn/s/688d65893dce`,
+    description: '香港武侠电影黄金时期的巅峰力作！洪金宝导演，狄龙、杨凡、关之琳、杨丽菁、邹兆龙等群星主演。讲述戊戌变法前夕，大刀王五与谭嗣同、袁世凯意气相投，却因国运转折走向不同宿命。“我自横刀向天笑，去留肝胆两昆仑”，打斗刚猛扎实、对白字字珠玑，豪迈悲壮的东方武侠绝唱，4K超清画质重温！',
+    episodes: '4K修复版完整正片',
+    audioSubtitle: '国粤双语音轨 / 精修中文字幕',
+    featured: true,
+    hotScore: 26500,
+    addedAt: '2026-10-05'
   }
 ];
